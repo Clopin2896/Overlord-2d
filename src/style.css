@@ -53,7 +53,7 @@ button:focus-visible {
   display: flex;
   align-items: flex-start;
   gap: 2%;
-  background: linear-gradient(#0b121af5, #101923c9, transparent);
+  background: linear-gradient(#131216f5, #17191bc9, transparent);
   pointer-events: none;
 }
 .eyebrow {
@@ -73,8 +73,8 @@ button:focus-visible {
 .heart {
   width: 27px;
   height: 9px;
-  background: #bc5e5c;
-  box-shadow: 0 2px #542b36;
+  background: #be6849;
+  box-shadow: 0 2px #542d27;
   transform: skew(-14deg);
 }
 .heart.empty {
@@ -224,7 +224,7 @@ kbd {
     #101923c9 46%,
     #0b121b66 100%
   );
-  backdrop-filter: blur(1px);
+  backdrop-filter: none;
 }
 .panel {
   text-align: center;
@@ -473,4 +473,42 @@ h2 {
   button {
     transition: none;
   }
+}
+
+/* Tarnished metal, ember highlights and a crisp horned heraldic seal. */
+.seal svg {
+  width: 44px;
+  height: 44px;
+  shape-rendering: crispEdges;
+}
+.primary {
+  background: linear-gradient(#cfab66, #ab7b43);
+  border-color: #dfbe7c;
+  box-shadow:
+    inset 0 0 0 2px #765330,
+    inset 0 0 0 3px #cfa565,
+    0 4px #493827,
+    0 6px 20px #0007;
+}
+#target {
+  border-color: #8c6b3e;
+  background: #1b1d1ee6;
+}
+#touch .attack {
+  background: #603c2de8;
+  border-color: #d49a5899;
+}
+
+#touch button svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin: 0 auto 4px;
+  fill: currentColor;
+  shape-rendering: crispEdges;
+}
+#touch .move-pad button svg {
+  width: 28px;
+  height: 28px;
+  margin: 0 auto;
 }

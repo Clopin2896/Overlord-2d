@@ -18,6 +18,12 @@ Sur Android : ouvrez le jeu dans Chrome ou Samsung Internet et tournez le télé
 
 Vous perdez si vos cinq points de vie ou vos trois larbins sont épuisés. Le bouton de nouvelle partie relance immédiatement tout le niveau. Aucun autre niveau n’est inclus.
 
+## Direction visuelle
+
+Pixel art original inspiré de la fantasy grotesque d’Overlord : armure noire à cornes, plaques de métal bordées de bronze, yeux incandescents, larbins terreux et grimaçants, forteresse gothique, chaînes et bannières écarlates. Les accents vert, ambre et turquoise permettent de distinguer les trois larbins pendant le combat.
+
+Les silhouettes, les courbes et les éclairages sont dessinés sur une grille de pixels avec les outils de `src/pixel.js`. `src/art.js` construit les animations, les décors en plusieurs plans et les textures de pierre, de bois et de métal. Les torches possèdent quatre images d’animation. Les ressources restent intégrées au projet et disponibles hors CDN.
+
 ## Développement dans le cloud
 
 Aucune installation sur le PC du joueur. Dans l’environnement cloud, depuis `/workspace/Overlord-2d` :

@@ -49,23 +49,53 @@
       </div>
       <div id="touch" class="hidden" aria-label="Commandes tactiles">
         <div class="move-pad">
-          <button data-control="left" aria-label="Aller à gauche">◀︎</button
-          ><button data-control="right" aria-label="Aller à droite">▶︎</button>
+          <button data-control="left" aria-label="Aller à gauche">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M16 3h3v18h-3v-3h-3v-3h-3v-2H7v-2h3V9h3V6h3Z" />
+            </svg></button
+          ><button data-control="right" aria-label="Aller à droite">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 3h3v3h3v3h3v2h3v2h-3v2h-3v3H8v3H5Z" />
+            </svg>
+          </button>
         </div>
         <div class="action-pad">
           <button data-control="recall" class="recall">
-            <span>↩︎</span>RAPPELER</button
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M8 2h3v5h7v2h3v10h-3v2H7v-3h10v-2h1v-4h-1v-2h-6v5H8v-3H5V9H2V8h3V5h3Z"
+              /></svg
+            >RAPPELER</button
           ><button data-control="send" class="send">
-            <span>➤</span>ENVOYER</button
-          ><button data-control="jump"><span>↑</span>SAUTER</button
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M3 3h3v2h4v2h4v2h4v2h3v2h-3v2h-4v2h-4v2H6v2H3v-7h8v-4H3Z"
+              /></svg
+            >ENVOYER</button
+          ><button data-control="jump">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M10 2h4v3h3v3h3v3h-6v10h-4V11H4V8h3V5h3Z" /></svg
+            >SAUTER</button
           ><button data-control="attack" class="attack">
-            <span>†</span>FRAPPER
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M11 1h2v3h2v11h4v3h-5v5h-4v-5H5v-3h4V4h2Z" /></svg
+            >FRAPPER
           </button>
         </div>
       </div>
       <div id="overlay">
         <section id="intro" class="panel">
-          <div class="seal">♜</div>
+          <div class="seal" aria-hidden="true">
+            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+              <path
+                fill="#c6a46c"
+                d="M2 2h3v8l7 5 5-4h7l5 4 6-5V2h3v12l-9 8v10l-9 6-9-6V22l-9-8Z"
+              />
+              <path fill="#343333" d="m13 18 7-5 7 5v12l-7 5-7-5Z" />
+              <path fill="#f0a14e" d="m13 22 6 3v3l-6-3Zm14 0-6 3v3l6-3Z" />
+              <path fill="#bca16d" d="M19 17h2v15h-2Z" />
+            </svg>
+          </div>
           <div class="eyebrow">UN TRÔNE. TROIS LARBINS. ZÉRO SCRUPULE.</div>
           <h1>LA DETTE<br /><span>DU ROI</span></h1>
           <div class="ornament">◆ ───────── ◆ ───────── ◆</div>

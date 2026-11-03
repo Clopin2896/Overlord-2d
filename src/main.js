@@ -98,7 +98,7 @@ class Level extends Phaser.Scene {
     this.hero = this.add
       .sprite(this.p.x, this.p.y, "lord0")
       .setOrigin(0.5, 1)
-      .setScale(1.45)
+      .setScale(1.2)
       .setDepth(12);
     this.sword = this.add
       .image(this.p.x + 22, 380, "sword")
@@ -117,7 +117,7 @@ class Level extends Phaser.Scene {
       sprite: this.add
         .sprite(88 - i * 29, 405, `imp${i}_0`)
         .setOrigin(0.5, 1)
-        .setScale(1.35)
+        .setScale(1.15)
         .setDepth(10 + i * 0.1),
       halo: this.add
         .ellipse(
@@ -138,11 +138,11 @@ class Level extends Phaser.Scene {
     this.guardSprite = this.add
       .image(2180, 405, "guard")
       .setOrigin(0.5, 1)
-      .setScale(1.6)
+      .setScale(1.4)
       .setDepth(9);
     this.shield = this.add
       .image(2145, 380, "shield")
-      .setScale(1.6)
+      .setScale(1.4)
       .setDepth(13);
     this.mace = this.add
       .image(2215, 360, "mace")
@@ -187,6 +187,20 @@ class Level extends Phaser.Scene {
     this.input.keyboard.addCapture(["SPACE", "UP", "DOWN", "LEFT", "RIGHT"]);
     this.cameras.main.setBounds(0, 0, 2760, 540);
     this.cameras.main.setScroll(0, 0);
+    // An enlarged in-game portrait introduces the new silhouette on the title screen.
+    this.titleArt = this.add
+      .container(765, 468)
+      .setScrollFactor(0)
+      .setDepth(30);
+    this.titleArt.add([
+      this.add.ellipse(0, 0, 170, 18, 0x080c12, 0.6),
+      this.add.image(0, 0, "lord0").setOrigin(0.5, 1).setScale(3.6),
+      this.add
+        .image(98, -86, "sword")
+        .setOrigin(0.5, 0.85)
+        .setScale(3.6)
+        .setAngle(15),
+    ]);
     $("loading").classList.add("hidden");
     show("intro", true);
     show("pause-panel", false);
@@ -223,6 +237,7 @@ class Level extends Phaser.Scene {
     if (this.mode !== "intro") return;
     audio.start();
     this.mode = "play";
+    this.titleArt.setVisible(false);
     clearInput();
     show("overlay", false);
     show("hud", true);
@@ -321,7 +336,7 @@ class Level extends Phaser.Scene {
       .setPosition(p.x, 407)
       .setScale(Math.max(0.4, 1 - (405 - p.y) / 220));
     this.sword
-      .setPosition(p.x + p.facing * 23, p.y - 30)
+      .setPosition(p.x + p.facing * 27, p.y - 28)
       .setRotation(
         p.facing * (p.attack > 0 ? 1.4 - (p.attack / 0.18) * 2.8 : 0.3),
       )
@@ -543,7 +558,7 @@ class Level extends Phaser.Scene {
         } else if (Math.abs(this.p.x - m.x) < 330) m.stuck = 0;
       }
       m.sprite
-        .setPosition(m.x, m.y)
+        .setPosition(m.x + (attached ? this.guard.facing * 8 : 0), m.y)
         .setFlipX(attached ? this.guard.facing > 0 : m.x < oldX)
         .setTexture(
           `imp${i}_${attached || Math.abs(m.x - oldX) > 0.1 ? 1 + (Math.floor(time / 90 + i) % 2) : 0}`,
