@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#10171c" />
+    <meta
+      name="description"
+      content="La Dette du Roi — un petit jeu d’action et de commandement. Trois larbins. Un trône à reprendre."
+    />
+    <title>La Dette du Roi — La porte des ingrats</title>
+  </head>
+  <body>
+    <div id="stage">
+      <div id="game" aria-label="Jeu d’action en vue de côté"></div>
+      <header id="hud" class="hidden">
+        <div class="vital">
+          <span class="eyebrow">LE SEIGNEUR DÉCHU</span>
+          <div id="health" aria-label="Vie"></div>
+        </div>
+        <div class="chapter">
+          <span class="eyebrow">CHAPITRE I</span
+          ><strong>La porte des ingrats</strong>
+        </div>
+        <div class="troop">
+          <span class="eyebrow">VOTRE GLORIEUSE ARMÉE</span>
+          <div id="minions"></div>
+        </div>
+        <button id="pause" class="icon-button" aria-label="Mettre en pause">
+          II
+        </button>
+      </header>
+      <div id="objective" class="hidden">
+        <span class="quest-dot"></span><span id="objective-text"></span>
+      </div>
+      <div id="target" class="hidden"></div>
+      <div id="danger" class="hidden" role="status">
+        ⚠ IL VA FRAPPER ! <b>L · RAPPELER</b>
+      </div>
+      <div id="subtitle" aria-live="polite"></div>
+      <div id="controls" class="hidden">
+        <span><kbd>Q</kbd><kbd>D</kbd> / <kbd>←</kbd><kbd>→</kbd> Courir</span
+        ><span><kbd>Espace</kbd> Sauter</span><span><kbd>J</kbd> Frapper</span
+        ><span><kbd>K</kbd> Envoyer</span><span><kbd>L</kbd> Rappeler</span
+        ><span><kbd>Échap</kbd> Pause</span>
+      </div>
+      <div id="touch" class="hidden" aria-label="Commandes tactiles">
+        <div class="move-pad">
+          <button data-control="left" aria-label="Aller à gauche">◀︎</button
+          ><button data-control="right" aria-label="Aller à droite">▶︎</button>
+        </div>
+        <div class="action-pad">
+          <button data-control="recall" class="recall">
+            <span>↩︎</span>RAPPELER</button
+          ><button data-control="send" class="send">
+            <span>➤</span>ENVOYER</button
+          ><button data-control="jump"><span>↑</span>SAUTER</button
+          ><button data-control="attack" class="attack">
+            <span>†</span>FRAPPER
+          </button>
+        </div>
+      </div>
+      <div id="overlay">
+        <section id="intro" class="panel">
+          <div class="seal">♜</div>
+          <div class="eyebrow">UN TRÔNE. TROIS LARBINS. ZÉRO SCRUPULE.</div>
+          <h1>LA DETTE<br /><span>DU ROI</span></h1>
+          <div class="ornament">◆ ───────── ◆ ───────── ◆</div>
+          <p class="intro-copy">
+            Votre forteresse a changé de propriétaire.<br />Il est temps de
+            renégocier le bail. À l’épée.
+          </p>
+          <button id="start" class="primary">
+            REPRENDRE MON DÛ <span>→</span>
+          </button>
+          <p class="small">CHAPITRE I <span>·</span> LA PORTE DES INGRATS</p>
+          <p class="intro-help">Clavier ou tactile · Environ 5 minutes</p>
+        </section>
+        <section id="pause-panel" class="panel hidden">
+          <div class="eyebrow">LE MAL PEUT ATTENDRE</div>
+          <h2>Une petite trêve.</h2>
+          <p>Vos larbins continuent d’être payés.<br />Donc rien ne change.</p>
+          <button id="resume" class="primary">REPRENDRE →</button
+          ><button class="restart secondary">Recommencer le niveau</button
+          ><button id="sound" class="secondary">Son : activé</button>
+          <p class="small">
+            Q/D ou ←/→ : courir · Espace : sauter<br />J : frapper · K : envoyer
+            · L : rappeler
+          </p>
+        </section>
+        <section id="result" class="panel hidden">
+          <div id="result-kicker" class="eyebrow"></div>
+          <h2 id="result-title"></h2>
+          <p id="result-copy"></p>
+          <div id="result-stats"></div>
+          <button class="restart primary">RECOMMENCER ↻</button>
+        </section>
+      </div>
+      <div id="rotate">
+        <div>↻</div>
+        <h2>Tournez votre téléphone</h2>
+        <p>Un royaume se conquiert en paysage.</p>
+      </div>
+      <div id="loading">Rassemblement des larbins…</div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
